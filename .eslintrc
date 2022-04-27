@@ -1,0 +1,6 @@
+{
+    "extends": "@antfu",
+    "rules": {
+        "dot-notation": [0] // 可以使用如 foo["bar"]
+    }
+}

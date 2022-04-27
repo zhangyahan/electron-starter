@@ -1,0 +1,16 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.run": "onType", // 运行linter 的时间，onSave(保存后)或onType(输入时)，默认为onType
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".vue",
+      ".jsx",
+      ".tsx"
+    ] //指定vscode的eslint所处理的文件的后缀
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // 保存时按eslint自动修复
+  }
+}
