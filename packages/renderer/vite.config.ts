@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import resolve from 'vite-plugin-resolve'
 import electron from 'vite-plugin-electron/renderer'
 import pkg from '../../package.json'
+import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,11 +20,17 @@ export default defineConfig({
        */
       {
         // If you use electron-store, this will work
-        'electron-store': 'const Store = require("electron-store"); export default Store;',
+        // 'electron-store': 'const Store = require("electron-store"); export default Store;',
       },
     ),
   ],
   base: './',
+  resolve: {
+    alias: {
+      '@': path.resolve('packages/renderer/src'),
+      'packages': path.resolve('packages'),
+    },
+  },
   build: {
     outDir: '../../dist/renderer',
     emptyOutDir: true,
